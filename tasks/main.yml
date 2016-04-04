@@ -29,6 +29,14 @@
     group: 'root'
     mode: '0700'
 
+- name: Touch error log file
+  file:
+    path: '/var/log/php-fpm-error.log'
+    state: 'touch'
+    owner: 'www-data'
+    group: 'www-data'
+    mode: '0644'
+
 - name: Check existence of php5-fpm-reopenlogs
   stat:
     path: '/usr/lib/php5/php5-fpm-reopenlogs'

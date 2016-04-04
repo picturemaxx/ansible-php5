@@ -213,7 +213,7 @@ engine = On
 ; Development Value: Off
 ; Production Value: Off
 ; http://php.net/short-open-tag #}
-short_open_tag = Off
+short_open_tag = {{ php5_short_open_tag | default('Off') }}
 {#
 ; Allow ASP-style <% %> tags.
 ; http://php.net/asp-tags #}
@@ -407,9 +407,9 @@ max_input_time = {{ php5_max_input_time | default('-1') }}
 ; http://php.net/max-input-nesting-level
 ;max_input_nesting_level = 64
 
-; How many GET/POST/COOKIE input variables may be accepted
-; max_input_vars = 1000
-
+; How many GET/POST/COOKIE input variables may be accepted #}
+max_input_vars = {{ php5_max_input_vars | default('1000') }}
+{#
 ; Maximum amount of memory a script may consume (128MB)
 ; http://php.net/memory-limit #}
 memory_limit = {{ php5_memory_limit | default('128M') }}
@@ -598,8 +598,10 @@ html_errors = On
 ; Example:
 ;error_log = php_errors.log
 ; Log errors to syslog (Event Log on NT, not valid in Windows 95).
-;error_log = syslog
+;error_log = syslog #}
+{% if php5_production is defined and php5_production|bool %}error_log = /var/log/php-fpm-error.log{% endif %}
 
+{#
 ;windows.show_crt_warning
 ; Default value: 0
 ; Development value: 0
@@ -1411,7 +1413,8 @@ session.save_handler = files
 ; where MODE is the octal representation of the mode. Note that this
 ; does not overwrite the process's umask.
 ; http://php.net/session.save-path #}
-;session.save_path = "/var/lib/php5"
+session.save_path = {{ php5_session_save_path | default('/var/lib/php5') }}
+
 {#
 ; Whether to use cookies.
 ; http://php.net/session.use-cookies #}
