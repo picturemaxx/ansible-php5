@@ -1,3 +1,6 @@
+CHANGELOG
+=========
+
 v1.1.0:
 
 * f148257: Add a few more variables and an error_log file
