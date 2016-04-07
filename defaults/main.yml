@@ -27,6 +27,7 @@ php5_allow_url_fopen: 'On'
 #php5_short_open_tag: 'Off'
 #php5_max_input_vars: 1000
 #php5_session_save_path: /var/lib/php5
+php5_cgi_fix_pathinfo: '0'
 
 # Default values used in pools when pool has none set
 php5_default_pm: 'ondemand'
