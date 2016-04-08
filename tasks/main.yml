@@ -63,6 +63,23 @@
     mode: '0644'
   notify: Restart php5-fpm
 
+- name: Upload custom config files
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/php5/mods-available/{{ item | basename }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_fileglob: "{{ inventory_dir }}/files/etc/php5/mods-available/*.ini"
+  register: php5_uploaded_config_files
+  notify: Restart php5-fpm
+
+- name: Enable cutom modules
+  command: "php5enmod {{ (item.dest | basename)[:-4] }}"
+  with_items: php5_uploaded_config_files.results
+  when: item.changed
+  notify: Restart php5-fpm
+
 - name: Check if pool-available.d/ directory exists
   stat:
     path: '/etc/php5/fpm/pool-available.d'
