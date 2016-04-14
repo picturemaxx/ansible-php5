@@ -54,6 +54,9 @@
     mode: '0644'
   notify: Restart php5-fpm
 
+- include: opcache.yml
+  when: ansible_distribution != 'Debian' and ansible_distribution_release != 'wheezy'
+
 - name: Check if pool-available.d/ directory exists
   stat:
     path: '/etc/php5/fpm/pool-available.d'

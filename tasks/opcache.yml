@@ -1,0 +1,30 @@
+---
+- name: Copy opcache config
+  template:
+    src: etc/php5/mods-available/opcache.ini.j2
+    dest: /etc/php5/mods-available/opcache.ini
+    owner: root
+    group: root
+    mode: 0644
+    backup: True
+  notify: Restart php5-fpm
+
+- name: Check for php5enmod
+  command: 'which php5enmod'
+  register: php5_php5enmod
+  failed_when: False
+  changed_when: False
+
+- name: Enable opcache
+  command: 'php5enmod -s fpm opcache'
+  when: php5_php5enmod|success
+  notify: Restart php5-fpm
+
+- name: Enable opcache
+  file:
+    state: link
+    src: ../../mods-available/opcache.ini
+    dest: /etc/php5/fpm/conf.d/05-opcache.ini
+  when: php5_php5enmod|failed
+  notify: Restart php5-fpm
+

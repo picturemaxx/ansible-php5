@@ -41,6 +41,14 @@ php5_max_file_uploads: 20
 php5_allow_url_fopen: 'On'
 php5_cgi_fix_pathinfo: '0'
 
+# Default values for the opcache
+php5_opcache_memory_consumption: 64
+#php5_opcache_interned_strings_buffer: 4
+php5_opcache_max_accelerated_files: 2000
+php5_opcache_revalidate_freq: 60
+#php5_opcache_blacklist_filename:
+#php5_opcache_error_log:
+
 # Default values used in pools when pool has none set
 php5_default_pm: 'ondemand'
 php5_default_pm_max_children: 5
