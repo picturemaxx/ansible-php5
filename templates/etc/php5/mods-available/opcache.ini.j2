@@ -10,14 +10,14 @@ opcache.enable=1
 ;opcache.enable_cli=0
 
 ; The OPcache shared memory storage size.
-opcache.memory_consumption={{ php5_opcache_memory_consumption }}
+opcache.memory_consumption={{ php5__opcache_memory_consumption }}
 
 ; The amount of memory for interned strings in Mbytes.
-opcache.interned_strings_buffer={{ php5_opcache_interned_strings_buffer|default('4') }}
+opcache.interned_strings_buffer={{ php5__opcache_interned_strings_buffer|default('4') }}
 
 ; The maximum number of keys (scripts) in the OPcache hash table.
 ; Only numbers between 200 and 100000 are allowed.
-opcache.max_accelerated_files={{ php5_opcache_max_accelerated_files }}
+opcache.max_accelerated_files={{ php5__opcache_max_accelerated_files }}
 
 ; The maximum percentage of "wasted" memory until a restart is scheduled.
 ;opcache.max_wasted_percentage=5
@@ -35,7 +35,7 @@ opcache.validate_timestamps={% if php5_production is defined and php5_production
 ; How often (in seconds) to check file timestamps for changes to the shared
 ; memory storage allocation. ("1" means validate once per second, but only
 ; once per request. "0" means always validate)
-opcache.revalidate_freq={{ php5_opcache_revalidate_freq }}
+opcache.revalidate_freq={{ php5__opcache_revalidate_freq }}
 
 ; Enables or disables file search in include_path optimization
 ;opcache.revalidate_path=0
@@ -68,8 +68,8 @@ opcache.fast_shutdown=0
 ; to a new line. The filename may be a full path or just a file prefix
 ; (i.e., /var/www/x  blacklists all the files and directories in /var/www
 ; that start with 'x'). Line starting with a ; are ignored (comments).
-{% if php5_opcache_blacklist_filename is defined %}
-opcache.blacklist_filename={{ php5_opcache_blacklist_filename }}
+{% if php5__opcache_blacklist_filename is defined %}
+opcache.blacklist_filename={{ php5__opcache_blacklist_filename }}
 {% else %}
 ;opcache.blacklist_filename=
 {% endif %}
@@ -87,8 +87,8 @@ opcache.blacklist_filename={{ php5_opcache_blacklist_filename }}
 ;opcache.force_restart_timeout=180
 
 ; OPcache error_log file name. Empty string assumes "stderr".
-{% if php5_opcache_error_log is defined %}
-opcache.error_log={{ php5_opcache_error_log }}
+{% if php5__opcache_error_log is defined %}
+opcache.error_log={{ php5__opcache_error_log }}
 {% else %}
 ;opcache.error_log=
 {% endif %}
