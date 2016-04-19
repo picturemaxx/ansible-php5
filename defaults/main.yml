@@ -48,6 +48,7 @@ php5_opcache_max_accelerated_files: 2000
 php5_opcache_revalidate_freq: 60
 #php5_opcache_blacklist_filename:
 #php5_opcache_error_log:
+php5__opcache_enabled: "ansible_distribution != 'Debian' and ansible_distribution_release != 'wheezy'"
 
 # Default values used in pools when pool has none set
 php5_default_pm: 'ondemand'
