@@ -128,8 +128,8 @@ php5__opcache_enabled: "{{ ansible_distribution != 'Debian' and
 # .. envvar:: php5__opcache_memory_consumption
 #
 # The OPcache shared memory storage size.
-php5__opcache_memory_consumption: '{{ (memcached_memory_available  | float *
-                                       memcached_memory_multiplier | float) | int }}'
+php5__opcache_memory_consumption: '{{ (php5__opcache_memory_available  | float *
+                                       php5__opcache_memory_multiplier | float) | int }}'
 
 # .. envvar:: php5__opcache_memory_available
 #
