@@ -54,6 +54,14 @@
     mode: '0644'
   notify: Restart php5-fpm
 
+- name: Ensure mods-available directory exists
+  file:
+    path: /etc/php5/mods-available/
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+
 - include: opcache.yml
   when: php5__opcache_enabled|bool
 
