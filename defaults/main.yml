@@ -122,8 +122,8 @@ php5_cgi_fix_pathinfo: '0'
 # .. envvar:: php5__opcache_enabled
 #
 # Enable the opcache extension
-php5__opcache_enabled: "ansible_distribution != 'Debian' and
-                        ansible_distribution_release != 'wheezy'"
+php5__opcache_enabled: "{{ ansible_distribution != 'Debian' and
+                        ansible_distribution_release != 'wheezy' }}"
 
 # .. envvar:: php5__opcache_memory_consumption
 #
