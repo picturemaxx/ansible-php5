@@ -25,6 +25,7 @@
     state: link
     src: ../../mods-available/opcache.ini
     dest: /etc/php5/fpm/conf.d/05-opcache.ini
+    force: yes
   when: php5_php5enmod|failed
   notify: Restart php5-fpm
 
