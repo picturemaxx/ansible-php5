@@ -65,6 +65,17 @@
 - include: opcache.yml
   when: php5__opcache_enabled|bool
 
+- name: Ensure mods-available directory exists
+  file:
+    path: /etc/php5/mods-available/
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+
+- include: opcache.yml
+  when: php5__opcache_enabled|bool
+
 - name: Check if pool-available.d/ directory exists
   stat:
     path: '/etc/php5/fpm/pool-available.d'
