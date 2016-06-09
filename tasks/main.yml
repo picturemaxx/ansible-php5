@@ -74,7 +74,7 @@
   register: php5_uploaded_config_files
   notify: Restart php5-fpm
 
-- name: Enable cutom modules
+- name: Enable custom modules
   command: "php5enmod {{ (item.dest | basename)[:-4] }}"
   with_items: php5_uploaded_config_files.results
   when: item.changed
