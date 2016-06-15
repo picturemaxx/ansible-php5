@@ -469,7 +469,7 @@ memory_limit = {{ php5_memory_limit | default('128M') }}
 ; Development Value: E_ALL
 ; Production Value: E_ALL & ~E_DEPRECATED & ~E_STRICT
 ; http://php.net/error-reporting #}
-error_reporting = {% if php5_production is defined and php5_production %}E_ALL & ~E_DEPRECATED{% else %}E_ALL{% endif %}
+error_reporting = {% if php5_production is defined and php5_production %}E_ALL & ~E_DEPRECATED & ~E_STRICT{% else %}E_ALL{% endif %}
 
 {#
 ; This directive controls whether or not and where PHP will output errors,
