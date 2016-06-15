@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v1.2.1:
+
+* 205afcd: Revert "Switch off strict warnings" to actually switch them off
+
 v1.2.0:
 
 * d8550ea: Fix typo
