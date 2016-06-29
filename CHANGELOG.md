@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v1.3.1:
+
+* 389f352: Logrotate daily, not weekly
+
 v1.3.0:
 
 * 12762cc: Add PHP error log to logrotate definition
