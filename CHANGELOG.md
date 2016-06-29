@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v1.3.0:
+
+* 12762cc: Add PHP error log to logrotate definition
+
 v1.2.1:
 
 * 205afcd: Revert "Switch off strict warnings" to actually switch them off
