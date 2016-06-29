@@ -1,8 +1,8 @@
 # {{ ansible_managed }}
 
 /var/log/php5-fpm.log /var/log/php5-fpm/*.log /var/log/php-fpm-error.log {
-	rotate 12
-	weekly
+	rotate 31
+	daily
 	missingok
 	notifempty
 	compress
