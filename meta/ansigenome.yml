@@ -1,9 +1,13 @@
 ---
 
 ansigenome_info:
+  galaxy_url: 'https://galaxy.ansible.com/debops/php5'
   github_url: "https://github.com/debops/ansible-php5"
   git_branch: "master"
-  galaxy_id: "1585"
+
+  status:
+    name: 'deprecated'
+    note: 'It has been superseded by [debops.php](https://github.com/debops/ansible-php).'
 
   travis: True
 
@@ -21,4 +25,3 @@ ansigenome_info:
     support for PHP5 on a host. `php5-fpm` package will be used as a backend
     for PHP5 applications. This role works very well with `debops.nginx` role
     for setting up `nginx` webserver as a frontend.
-
