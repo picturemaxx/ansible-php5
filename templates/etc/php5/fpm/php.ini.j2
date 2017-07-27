@@ -1750,13 +1750,14 @@ mssql.secure_connection = Off
 ; language for internal character representation.
 ; http://php.net/mbstring.language
 ;mbstring.language = Japanese
-
+#}
 ; internal/script encoding.
 ; Some encoding cannot work as internal encoding.
 ; (e.g. SJIS, BIG5, ISO-2022-*)
 ; http://php.net/mbstring.internal-encoding
 ;mbstring.internal_encoding = EUC-JP
-
+mbstring.internal_encoding=UTF-8
+{#
 ; http input encoding.
 ; http://php.net/mbstring.http-input
 ;mbstring.http_input = auto
