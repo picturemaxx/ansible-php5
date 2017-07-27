@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v1.4.0:
+
+* 610d4fd: Set mbstring.internal_encoding to UTF-8
+
 v1.3.1:
 
 * 389f352: Logrotate daily, not weekly
