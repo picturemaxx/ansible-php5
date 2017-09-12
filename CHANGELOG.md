@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v1.5.0:
+
+* 6d59422: Make the session lifetime configurable
+
 v1.4.0:
 
 * 610d4fd: Set mbstring.internal_encoding to UTF-8
